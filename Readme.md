@@ -4,6 +4,8 @@
 
 
 
+**2022.5.11**
+
 - 登录接口请求
 
 ```js
@@ -18,3 +20,9 @@ this.axios({
 
 - `src/views/upload_video/index.vue`为上传视频页
 - `src/views/upload_file/index.vue`为上传文档页
+
+------
+
+**2022.5.13** 
+
+- 前端已完成视频上传页和文章上传页
