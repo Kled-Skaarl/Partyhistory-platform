@@ -44,8 +44,8 @@ export default {
   data() {
     return {
       form: {
-        username: "",
-        password: "",
+        username: "party",
+        password: "3yN*niZU2pvW066o&%",
       },
       usermessage: {
         name: "",
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     login() {
-      var ses=window.sessionStorage;
+      var ses = window.sessionStorage;
       var that = this;
       this.axios({
         method: "post",
@@ -67,8 +67,8 @@ export default {
         that.usermessage.id = res.data.user_nicename;
         console.log(that.usermessage);
         const token = res.data.token;
-        ses.setItem('token',token);
-        console.log(that.usermessage)
+        ses.setItem("token", token);
+        console.log(that.usermessage);
         that.$store.commit("setToken", token);
         that.$router.push({
           name: "upload_video",

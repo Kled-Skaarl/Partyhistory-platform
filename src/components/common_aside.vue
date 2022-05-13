@@ -9,6 +9,7 @@
     text-color="#fff"
     active-text-color="#ffd04b"
   >
+    <div class="collapse" @click="isColl">|||</div>
     <el-menu-item
       v-for="item in dividers"
       :index="item.path"
@@ -21,14 +22,21 @@
   </el-menu>
 </template>
 
-<style>
+<style scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 150px;
+  width: 200px;
   /* min-height: 400px; */
 }
 .el-menu {
-  height: 600px;
+  height: calc(100vh - 60px);
   border: none;
+}
+.collapse {
+  background-color: #ccc;
+  text-align: center;
+  color: #fff;
+  padding: 8px 0;
+  cursor: pointer;
 }
 </style>
 
@@ -52,6 +60,10 @@ export default {
     };
   },
   methods: {
+    isColl() {
+      this.isCollapse = !this.isCollapse;
+      this.$emit("isColl", this.isCollapse);
+    },
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },
